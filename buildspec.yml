@@ -2,16 +2,26 @@ version: 0.2
 
 env:
   parameter-store:
-    ssh_key: id_ed25519
-    ssh_pub: id_ed25519.pub
-
+    build_ssh_key: "build_ssh_key"
 
 phases:
   install:
     commands:
       - mkdir -p ~/.ssh
-      - echo "$ssh_key" > ~/.ssh/id_ed25519   
-      - echo "$ssh_pub" > ~/.ssh/id_ed25519.pub
-      - chmod 600 ~/.ssh/id_ed25519
-      - eval "$(ssh-agent -s)"
-      - git submodule update --init --recursive
+      - echo "$build_ssh_key" > ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - ssh-keygen -F github.com || ssh-keyscan github.com >>~/.ssh/known_hosts
+      - git config --global url."git@github.com:".insteadOf "https://github.com/"
+      - git init
+      - git remote add origin <Your Repo url here using the git protocol>
+      - git fetch
+      - git checkout -t origin/master
+      - git submodule init
+      - git submodule update --recursive
+  build:
+    commands:
+      - echo '...replace with real build commands...'
+
+artifacts:
+  files:
+    - '**/*'
