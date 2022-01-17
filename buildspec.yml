@@ -14,7 +14,6 @@ phases:
       - ssh-keygen -F github.com || ssh-keyscan github.com >>~/.ssh/known_hosts
       - git config --global url."git@github.com:".insteadOf "https://github.com/"
       - git init
-      - git remote rm origin
       - git remote add origin git@github.com:rameshreddy799/awsgithubcodebuild.git
       - git fetch
       - git checkout -t origin/master
