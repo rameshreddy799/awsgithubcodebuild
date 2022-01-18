@@ -17,7 +17,7 @@ phases:
       - git init
       - git remote add origin https://github.com/rameshreddy799/awscodebuildgitsubmodule1.git
       - git fetch
-      - git checkout -t origin/master
+      - git checkout -t origin/main
       - git submodule init
       - git submodule update --recursive
   build:
