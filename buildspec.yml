@@ -22,6 +22,7 @@ phases:
       - git config --global user.name "rameshreddy799"
       - git commit -m 'Add aws sub module1'
       - git remote -v
+      - git remote add origin git@github.com:rameshreddy799/awsgithubcodebuild.git
       - git push origin master
   build:
     commands:
