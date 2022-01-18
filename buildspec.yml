@@ -15,7 +15,7 @@ phases:
       - ssh-keygen -F github.com || ssh-keyscan github.com >>~/.ssh/known_hosts
       - git config --global url."git@github.com:".insteadOf "https://github.com/"
       - git init
-      - git remote add origin https://github.com/rameshreddy799/awscodebuildsubmodule1.git
+      - git remote add origin git@github.com:rameshreddy799/awscodebuildgitsubmodule1.git
       - git fetch
       - git checkout -t origin/main
       - git submodule init
