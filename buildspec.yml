@@ -24,7 +24,8 @@ phases:
       - git remote -v
       - git remote add origin git@github.com:rameshreddy799/awsgithubcodebuild.git
       - git fetch origin master:tmp
-      - git push origin HEAD:main
+      - git rebase tmp
+      - git push origin HEAD:master
       - git branch -D tmp
   build:
     commands:
