@@ -23,7 +23,7 @@ phases:
       - git commit -m 'Add aws sub module1'
       - git remote -v
       - git remote add origin git@github.com:rameshreddy799/awsgithubcodebuild.git
-      - git push origin main
+      - git push origin master:main
   build:
     commands:
       - echo '...replace with real build commands...'
