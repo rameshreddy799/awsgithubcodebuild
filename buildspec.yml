@@ -25,9 +25,7 @@ phases:
       - git remote add origin git@github.com:rameshreddy799/awsgithubcodebuild.git
       - git fetch origin master:tmp1
       - git rm .gitmodules
-      - git rebase --continue
       - git commit -m 'after deleting in .gitmodules file'
-      - git rebase tmp1
       - git push origin HEAD:master
       - git branch -D tmp1
   build:
